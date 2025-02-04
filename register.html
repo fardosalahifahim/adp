@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create an Act Account</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            font-family: Arial, sans-serif;
+        }
+        .registration-container {
+            background: rgba(0, 0, 0, 0.7); /* Darker semi-transparent background */
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #fff; /* White text */
+        }
+        input[type="text"],
+        input[type="email"],
+        input[type="password"],
+        input[type="date"],
+        select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: none;
+            border-radius: 4px;
+            background: rgba(255, 255, 255, 0.3); /* Lighter semi-transparent background */
+            color: #fff; /* White text */
+        }
+        input[type="submit"] {
+            background-color: #ff3f0f; /* Colored background */
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px; /* Rounded edges */
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #e63946; /* Darker shade on hover */
+        }
+        .footer {
+            margin-top: 10px;
+            color: #fff; /* White text */
+        }
+    </style>
+</head>
+<body>
+    <div class="registration-container">
+        <h2>Welcome to Act.</h2>
+        <h3>Create an Act Account</h3>
+        <form action="register.php" method="POST">
+            <input type="text" name="first_name" placeholder="First Name" required>
+            <input type="text" name="last_name" placeholder="Last Name" required>
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="date" name="dob" placeholder="Birth Date" required>
+            <label for="gender" style="color: #fff;">Gender:</label>
+            <select name="gender" required>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="other">Other</option>
+            </select>
+            <input type="password" name="password" placeholder="Password" required>
+            <input type="password" name="retype_password" placeholder="Confirm Password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+        <div class="footer">
+            <p>If you already have an account, <a href="login.html" style="color: #fff;">Log In</a>.</p>
+        </div>
+    </div>
+</body>
+</html>
