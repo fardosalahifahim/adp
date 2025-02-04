@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Actdoor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #6a0dad, #ff3f0f); /* Gradient background */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            color: #fff;
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            width: 400px; /* Fixed width */
+            text-align: center;
+        }
+        .login-container h1 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+        .login-container input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+            background: rgba(0, 0, 0, 0.5); /* Darker semi-transparent background */
+            color: #fff; /* White text */
+        }
+        .login-container button {
+            background-color: #ff3f0f; /* Colored background */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px; /* Rounded edges */
+            cursor: pointer;
+            width: 100%;
+            transition: background-color 0.3s;
+        }
+        .login-container button:hover {
+            background-color: #e63946; /* Darker shade on hover */
+        }
+        .forgot-password {
+            margin-top: 10px;
+            color: #fff;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .register-text {
+            margin-top: 20px;
+            color: #fff; /* White text */
+        }
+        .register-text a {
+            color: #ff3f0f; /* Register link color */
+            text-decoration: underline; /* Underline for emphasis */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Welcome to Act.</h1>
+        <form action="login.php" method="POST">
+            <input type="text" name="username" placeholder="USERNAME or EMAIL" required>
+            <input type="password" name="password" placeholder="PASSWORD" required>
+            <button type="submit">LOGIN</button>
+        </form>
+        <div class="register-text">If you don't have an account, <a href="register.html">Register</a>.</div>
+        <div class="forgot-password">Forgot your password?</div>
+    </div>
+</body>
+</html>

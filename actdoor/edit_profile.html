@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Profile</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-color: #f5f5f5; /* Light background */
+        }
+        h2 {
+            color: #333;
+        }
+        form {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        select {
+            margin-bottom: 20px;
+        }
+        input[type="submit"] {
+            background-color: #ff3f0f;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #e63946; /* Darker shade on hover */
+        }
+    </style>
+</head>
+<body>
+    <h2>Edit Profile Privacy</h2>
+    <form action="edit_profile.php" method="POST">
+        <label for="privacy">Profile Privacy:</label>
+        <select name="privacy" required>
+            <option value="public">Public</option>
+            <option value="friends">Friends</option>
+        </select>
+        <input type="submit" value="Update Privacy">
+    </form>
+</body>
+</html>

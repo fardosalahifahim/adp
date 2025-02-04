@@ -1,0 +1,79 @@
+<?php
+include 'db.php';
+session_start();
+
+// Check if user is logged in
+if (!isset($_SESSION['user_id'])) {
+    header("Location: login.html");
+    exit();
+}
+
+$user_id = $_SESSION['user_id'];
+
+// Fetch posts for the user
+$sql = "SELECT * FROM posts WHERE user_id='$user_id' ORDER BY created_at DESC";
+$result = $conn->query($sql);
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Feed</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+            margin: 0;
+        }
+        .container {
+            background: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            color: #333;
+        }
+        .post {
+            border-bottom: 1px solid #ccc;
+            padding: 10px 0;
+        }
+        .post:last-child {
+            border-bottom: none;
+        }
+        .post strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .post em {
+            font-size: 0.9em;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Your Feed</h1>
+        <!-- Display user posts -->
+        <?php
+        if ($result->num_rows > 0) {
+            while($row = $result->fetch_assoc()) {
+                echo "<div class='post'>";
+                echo "<strong>User ID: " . htmlspecialchars($row['user_id']) . "</strong>";
+                echo "<p>" . htmlspecialchars($row['content']) . "</p>";
+                echo "<em>Posted on: " . htmlspecialchars($row['created_at']) . "</em>";
+                echo "</div>";
+            }
+        } else {
+            echo "<p>No posts available.</p>";
+        }
+        ?>
+    </div>
+</body>
+</html>
+<?php
+$conn->close();
+?>
